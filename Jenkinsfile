@@ -24,9 +24,8 @@ pipeline {
 
     stage('Unit Test') {
       steps {
-        sh '''./chromedriver \\
-./mvnw test \\
-junit \'**//target/surefire-reports/TEST-*.xml\''''
+        sh '''./mvnw test \\
+junit \'**/target/surefire-reports/TEST-*.xml\''''
       }
     }
 
