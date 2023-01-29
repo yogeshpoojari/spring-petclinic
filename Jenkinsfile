@@ -29,8 +29,7 @@ pipeline {
 
     stage('Unit Test') {
       steps {
-        sh '''echo \'Start Unit Tests\' \\
-./mvnw "-Dtest=**/petclinic/*/*.java" test
+        sh '''./mvnw "-Dtest=**/petclinic/*/*.java" test
 '''
       }
     }
