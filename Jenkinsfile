@@ -22,8 +22,8 @@ pipeline {
       steps {
         sh '''./mvnw sonar:sonar \\
   -Dsonar.projectKey=spring-petclinic \\
-  -Dsonar.host.url=http://172.31.26.125:9000 \\
-  -Dsonar.login=sqp_6f4fea28fd0538817587d186a387bda667d69082'''
+  -Dsonar.host.url=http://172.31.30.225:9000 \\
+  -Dsonar.login=sqp_9353649e7455b02980e5ac18e1a87df2be3faf37'''
       }
     }
 
