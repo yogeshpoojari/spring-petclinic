@@ -52,7 +52,7 @@ pipeline {
         stage('Integration and Performance Test') {
           steps {
             sh './mvnw verify -DskipUnitTests'
-            perfReport '  **/target/jmeter/results/*.csv'
+            perfReport '  **/target/jmeter/results/*.*'
           }
         }
 
