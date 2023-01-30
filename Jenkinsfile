@@ -41,7 +41,7 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('Quality Assurance') {
       parallel {
         stage('Deploy') {
           steps {
