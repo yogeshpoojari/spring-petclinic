@@ -59,5 +59,11 @@ pipeline {
       }
     }
 
+    stage('Status Update') {
+      steps {
+        emailext(subject: 'Build Status', to: 'yogesh.s.poojari@gmail.com', body: 'Build Run. Please review the Logs', from: 'CICD Build ')
+      }
+    }
+
   }
 }
