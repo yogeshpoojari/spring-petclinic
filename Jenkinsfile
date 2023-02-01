@@ -59,21 +59,5 @@ pipeline {
       }
     }
 
-    stage('Status Update') {
-      steps {
-        emailext(subject: 'Build Status', to: 'yogeshpoojari@live.in', body: 'Build Run. Please review the Logs', from: 'CICDBuild ')
-      }
-    }
-
-    stage('Generate SBOM') {
-      steps {
-        sh '''curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
-syft app:${BUILD_NUMBER} --scope all-layers -o json > sbom-${BUILD_NUMBER}.json
-syft app:${BUILD_NUMBER} --scope all-layers -o table > sbom-${BUILD_NUMBER}.txt'''
-        archiveArtifacts(allowEmptyArchive: true, artifacts: 'sbom*', fingerprint: true, onlyIfSuccessful: true)
-        sh ' rm -rf sbom*'
-      }
-    }
-
   }
 }
