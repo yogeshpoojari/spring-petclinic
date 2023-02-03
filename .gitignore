@@ -17,3 +17,4 @@ _site/
 !petclinic.css
 sbom.json
 sbom.txt
+sbom.xml
