@@ -61,7 +61,7 @@ pipeline {
 
     stage('Generate SBOM') {
       steps {
-        sh './cdxgen -r -o bom.json'
+        sh 'cdxgen -r -o sbom.json'
         archiveArtifacts(artifacts: 'sbom.*', allowEmptyArchive: true)
       }
     }
